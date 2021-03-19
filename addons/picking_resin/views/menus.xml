@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Top menu item -->
+        <menuitem id="menu_root"
+                  name="Picking resin"
+        />
+
+        <!-- Menu category -->
+        <menuitem id="menu_employees"
+                  name="Resin employees"
+                  parent="menu_root"
+                  sequence="150"
+                  action="hr_employee_action"
+                  groups="picking_resin.group_admin"
+        />
+
+        <menuitem id="menu_222"
+                  name="2222"
+                  parent="menu_root"
+                  groups="picking_resin.group_admin"
+        />
+        <!-- Меню не выводится без экшена -->
+
+        <menuitem id="menu_test"
+                  name="Menu Test"
+                  parent="menu_root"
+                  action="picking_resin.test_action"
+                  groups="picking_resin.group_admin"
+        />
+
+
+        <!-- Work Employees -->
+
+</odoo>

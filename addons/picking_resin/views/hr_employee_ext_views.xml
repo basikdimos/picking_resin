@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_view_employee_tree_ext" model="ir.ui.view">
+            <field name="name">hr.employee.tree.ext</field>
+            <field name="model">hr.employee</field>
+            <field name="priority">32</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_view_employee_form_ext" model="ir.ui.view">
+            <field name="name">hr.employee.form.ext</field>
+            <field name="model">hr.employee</field>
+            <field name="priority">32</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="type_of_employment"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_employee_action" model="ir.actions.act_window">
+            <field name="name">Resin Employees</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>
