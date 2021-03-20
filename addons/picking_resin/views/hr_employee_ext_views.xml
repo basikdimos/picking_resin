@@ -2,8 +2,8 @@
 <odoo>
     <data>
 
-        <record id="hr_view_employee_tree_ext" model="ir.ui.view">
-            <field name="name">hr.employee.tree.ext</field>
+        <record id="hr_employee_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.tree</field>
             <field name="model">hr.employee</field>
             <field name="priority">32</field>
             <field name="arch" type="xml">
@@ -13,14 +13,32 @@
             </field>
         </record>
 
-        <record id="hr_view_employee_form_ext" model="ir.ui.view">
-            <field name="name">hr.employee.form.ext</field>
+        <record id="hr_employee_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
             <field name="model">hr.employee</field>
             <field name="priority">32</field>
             <field name="arch" type="xml">
                 <form>
-                    <field name="name"/>
+                    <field name="active"/>
                     <field name="type_of_employment"/>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="user_id"
+                                   options="{'no_open': True, 'no_create_edit': 1, 'no_create': 1}"
+                            />
+                            <field name="mobile_phone" widget="phone"/>
+                            <field name="work_phone" widget="phone"/>
+                        </group>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="parent_id"/>
+                            <field name="company_id"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -30,6 +48,10 @@
             <field name="name">Resin Employees</field>
             <field name="res_model">hr.employee</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('picking_resin.hr_employee_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('picking_resin.hr_employee_view_form')})]"
+            />
         </record>
 
 

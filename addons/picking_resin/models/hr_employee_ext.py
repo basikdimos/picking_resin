@@ -23,7 +23,12 @@ class HrEmployeeExt(models.Model):
     # Private attributes
     # ------------------------------------------------------------------------------------------------------------------
 
-    _inherit = 'hr.employee'
+    _name = 'hr.employee'
+
+    _inherit = [
+        'hr.employee',
+        'mail.thread',
+    ]
     _description = ''
 
     # Default methods
@@ -31,6 +36,24 @@ class HrEmployeeExt(models.Model):
 
     # Fields declaration
     # ------------------------------------------------------------------------------------------------------------------
+
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        track_visibility=True,  # переопределен для добавления трекинга
+    )
+    """ Аккаунт пользователя """
+
+    parent_id = fields.Many2one(
+        comodel_name='hr.employee',
+        track_visibility=True,  # переопределен для добавления трекинга
+    )
+    """ Мастер сотрудника """
+
+    department_id = fields.Many2one(
+        comodel_name='hr.department',
+        track_visibility=True,  # переопределен для добавления трекинга
+    )
+    """ Департамент сотрудника (участок) """
 
     type_of_employment = fields.Char(
         string='Type of employment',
