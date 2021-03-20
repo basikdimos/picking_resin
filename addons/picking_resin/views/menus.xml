@@ -6,11 +6,27 @@
         />
 
         <!-- Menu category -->
+        <menuitem id="menu_config"
+                  name="Config"
+                  parent="menu_root"
+                  sequence="110"
+                  groups="picking_resin.group_admin"
+        />
+
+        <!-- Menus -->
         <menuitem id="menu_employees"
                   name="Resin employees"
-                  parent="menu_root"
+                  parent="menu_config"
                   sequence="150"
                   action="hr_employee_action"
+                  groups="picking_resin.group_admin"
+        />
+
+        <menuitem id="menu_department"
+                  name="District teams"
+                  parent="menu_config"
+                  sequence="160"
+                  action="picking_resin.hr_department_action"
                   groups="picking_resin.group_admin"
         />
 

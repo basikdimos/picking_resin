@@ -16,6 +16,7 @@
 
         'views/test_views.xml',
         'views/hr_employee_ext_views.xml',
+        'views/hr_department_ext_views.xml',
 
         'views/menus.xml',
     ],
