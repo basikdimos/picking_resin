@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Top menu item -->
+        <menuitem id="menu_root"
+                  name="Picking resin"
+        />
+
+        <!-- Menu category -->
+        <menuitem id="menu_work_types"
+                  name="Work_types"
+                  parent="menu_root"
+                  sequence="110"
+                  action="work_types_action"
+        />
+</odoo>

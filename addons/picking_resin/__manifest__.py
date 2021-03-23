@@ -6,8 +6,14 @@
     'website':"None",
     'category':'STiM',
     'version':'14.0.0',
-    'depends': [],
-    'data': [],
+    'depends': ['base'],
+    'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        
+        'views/work_types_view.xml',
+
+        'views/work_types_menu.xml'],
     'demo': [],
     'application': True,
     'sequence': -100,

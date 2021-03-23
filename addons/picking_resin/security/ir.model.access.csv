@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access__picking_resin_work_types__picking_resin_group_admin,picking_resin.work_types__picking_resin_group_admin,model_picking_resin_work_types,picking_resin.group_admin,1,1,1,1
