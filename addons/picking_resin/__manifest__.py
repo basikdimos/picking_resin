@@ -6,8 +6,19 @@
     'website':"None",
     'category':'STiM',
     'version':'14.0.0',
-    'depends': [],
-    'data': [],
+    'depends': [
+        'base',
+        'hr',
+    ],
+    'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+
+        'views/hr_employee_ext_views.xml',
+        'views/hr_department_ext_views.xml',
+
+        'views/menus.xml',
+    ],
     'demo': [],
     'application': True,
     'sequence': -100,

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Top menu item -->
+        <menuitem id="menu_root"
+                  name="Picking resin"
+        />
+
+        <!-- Menu category -->
+        <menuitem id="menu_config"
+                  name="Config"
+                  parent="menu_root"
+                  sequence="110"
+                  groups="picking_resin.group_admin"
+        />
+
+        <!-- Menus -->
+        <!-- Work Employees -->
+        <menuitem id="menu_employees"
+                  name="Resin employees"
+                  parent="menu_config"
+                  sequence="150"
+                  action="hr_employee_action"
+                  groups="picking_resin.group_admin"
+        />
+
+        <!-- Work District -->
+        <menuitem id="menu_department"
+                  name="District teams"
+                  parent="menu_config"
+                  sequence="160"
+                  action="picking_resin.hr_department_action"
+                  groups="picking_resin.group_admin"
+        />
+
+
+
+</odoo>

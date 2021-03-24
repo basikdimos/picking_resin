@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: odoo:14.0
+    image: library/odoo:latest
     container_name: odoo14-dev
     depends_on:
       - db
@@ -15,7 +15,7 @@ services:
     image: postgres:12
     container_name: odoo14-db
     ports:
-      - "5432:5432"
+      - "30032:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
