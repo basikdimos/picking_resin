@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="department_id"/>
                 </tree>
             </field>
         </record>
@@ -50,7 +51,7 @@
                                     </group>
                                     <group>
                                         <field name="department_id"/>
-                                        <field name="parent_id"/>
+                                        <field name="parent_id" readonly="1"/>
                                         <field name="company_id" invisible="1"/>
                                         <field name="type_of_employment"/>
                                     </group>

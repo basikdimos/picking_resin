@@ -34,7 +34,7 @@
                             </button>
                         </div>
                         <group>
-                            <field name="name" string="District tream"/>
+                            <field name="name" string="District team"/>
                             <field name="company_id" invisible="1"/>
                             <field name="manager_id" string="Master"
                                    domain="[('user_id', '!=', False)]"

@@ -14,6 +14,7 @@
         />
 
         <!-- Menus -->
+        <!-- Work Employees -->
         <menuitem id="menu_employees"
                   name="Resin employees"
                   parent="menu_config"
@@ -22,6 +23,7 @@
                   groups="picking_resin.group_admin"
         />
 
+        <!-- Work District -->
         <menuitem id="menu_department"
                   name="District teams"
                   parent="menu_config"
@@ -30,21 +32,6 @@
                   groups="picking_resin.group_admin"
         />
 
-        <menuitem id="menu_222"
-                  name="2222"
-                  parent="menu_root"
-                  groups="picking_resin.group_admin"
-        />
-        <!-- Меню не выводится без экшена -->
 
-        <menuitem id="menu_test"
-                  name="Menu Test"
-                  parent="menu_root"
-                  action="picking_resin.test_action"
-                  groups="picking_resin.group_admin"
-        />
-
-
-        <!-- Work Employees -->
 
 </odoo>
