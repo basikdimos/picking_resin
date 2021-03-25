@@ -30,6 +30,17 @@
                                 <group>
                                     <field name="shift_date"/>
                                 </group>
+                                <group>
+                                    <field name="employee_ids">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="quantity"/>
+                                            <field name="department_id" invisible="1"/>
+                                            <field name="shift_date" invisible="1"/>
+                                            <field name="key" invisible="1"/>
+                                        </tree>
+                                    </field>
+                                </group>
                             </div>
                         </div>
 

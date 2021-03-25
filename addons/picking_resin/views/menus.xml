@@ -39,6 +39,15 @@
                   groups="picking_resin.group_admin"
         />
 
+        <!-- Work employee list -->
+        <menuitem id="menu_employee_list"
+                  name="Shift employee list"
+                  parent="menu_config"
+                  sequence="170"
+                  action="picking_resin.shift_employee_list"
+                  groups="picking_resin.group_admin"
+        />
+        <!-- Menu work -->
         <!-- Menu Work Shift-->
         <menuitem id="menu_work_shift"
                   name="Work Shift"

@@ -43,6 +43,11 @@ class WorkShift(models.Model):
         required=True,
     )
 
+    employee_ids = fields.Many2many(
+        comodel_name='picking_resin.shift_employees_list',
+        string='List employee',
+    )
+
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -54,14 +59,52 @@ class WorkShift(models.Model):
 
     @api.onchange('name')
     def _onchange_department(self):
-        if self:
-            print('777')
+        if self.name:
+            if not self.shift_date:
+                self.shift_date = fields.Datetime.now()
+            # scan-rescan employees
+            item_env = self.env['picking_resin.shift_employees_list']
+            key = str((self.name.id, self.shift_date))
+            for records in self.employee_ids:
+                for record in records:
+                    item_env.search([
+                        ('name', '=', record.name.id),
+                        ('department_id', '=', record.department_id.id),
+                        ('shift_date', '=', record.shift_date),
+                        ('key', '=', key)
+                    ]).unlink()
+            teams = self.env['hr.employee'].search([
+                ('department_id', '=', self.name.id),
+            ])
+            for record in teams:
+                vals = {
+                    'name': record.id,
+                    'quantity': 0.0,
+                    'department_id': self.name.id,
+                    'shift_date': self.shift_date,
+                    'key': key,
+                }
+                item_env.create(vals)
+            self.employee_ids = item_env.search([
+                ('department_id', '=', self.name.id),
+                ('shift_date', '=', self.shift_date),
+                ('key', '=', key)
+            ])
 
     # Business methods
     # ------------------------------------------------------------------------------------------------------------------
 
     # CRUD methods
     # ------------------------------------------------------------------------------------------------------------------
+
+    def unlink(self):
+        item_env = self.env['picking_resin.shift_employees_list']
+        key = str((self.name.id, self.shift_date))
+        item_env.search([
+            ('key', '=', key),
+        ]).unlink()
+        res = super().unlink()
+        return res
 
     # Action methods
     # ------------------------------------------------------------------------------------------------------------------

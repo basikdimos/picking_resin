@@ -42,6 +42,21 @@ class ShiftEmployeesList(models.Model):
         digits=(8,3),
     )
 
+    department_id = fields.Many2one(
+        comodel_name='hr.department',
+        string='District',
+    )
+
+    shift_date = fields.Datetime(
+        string='Shift Date',
+    )
+
+    key = fields.Char(
+        string='Unique key record',
+    )
+
+
+
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 
