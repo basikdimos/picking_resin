@@ -2,14 +2,15 @@
 <odoo>
         <!-- Top menu item -->
         <menuitem id="menu_root"
-                  name="Picking resin"
+                  name="Сбор живицы"
+                  sequence="0"
+                  web_icon="home/pycharm/picking_resin/addons/picking_resin/res/images/work_types_icon.jpeg"
         />
 
         <!-- Menu category -->
         <menuitem id="menu_work_types"
-                  name="Work_types"
+                  name="Справочник 'Типы работ'"
                   parent="menu_root"
-                  sequence="110"
                   action="work_types_action"
         />
 </odoo>

@@ -19,7 +19,7 @@ class OdooClassName(models.Model):
     """
     Work types dictionary.
         Fields:
-            id / work_types
+            id / work_types / measure_unit
     """
 
     # Private attributes
@@ -32,16 +32,24 @@ class OdooClassName(models.Model):
     # ------------------------------------------------------------------------------------------------------------------
 
     # Fields declaration
-    name = fields.Char(
-        string="Work types",
+    work_type = fields.Char(
+        string="Тип работы",
         required='True'
     )
+
+    measure_unit = fields.Many2one(
+        string="Единица измерения",
+        comodel_name="uom.uom",
+        required=True
+    )
+
     # ------------------------------------------------------------------------------------------------------------------
 
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 
     # Selection method (methods used to return computed values for selection fields)
+
     # ------------------------------------------------------------------------------------------------------------------
 
     # Constraints and onchanges
@@ -51,6 +59,10 @@ class OdooClassName(models.Model):
     # ------------------------------------------------------------------------------------------------------------------
 
     # CRUD methods
+    active = fields.Boolean(
+        'Active',
+        default=True
+    )
     # ------------------------------------------------------------------------------------------------------------------
 
     # Action methods

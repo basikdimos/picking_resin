@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="work_type_id" model="picking_resin.work_types">
+            <field name="work_type">Окаривание</field>
+            <field name="measure_unit">Ое</field>
+        </record>
+    </data>
+</odoo>
