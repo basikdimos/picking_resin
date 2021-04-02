@@ -97,6 +97,35 @@ class WorkShift(models.Model):
     # CRUD methods
     # ------------------------------------------------------------------------------------------------------------------
 
+    @api.model
+    def create(self,vals_list):
+        res = super(WorkShift, self).create(vals_list)
+        names = []
+        for records in res.employee_ids:
+            for record in records:
+                names.append(record.name.id)
+        item_env = self.env['picking_resin.shift_employees_list']
+        key = str((res.name.id, res.shift_date))
+        item_env.search([
+            ('key', '=', key),
+            ('name', 'not in', names)
+        ]).unlink()
+        return res
+
+    def write(self, vals_list):
+        res = super(WorkShift, self).write(vals_list)
+        names = []
+        for records in self.employee_ids:
+            for record in records:
+                names.append(record.name.id)
+        item_env = self.env['picking_resin.shift_employees_list']
+        key = str((self.name.id, self.shift_date))
+        item_env.search([
+            ('key', '=', key),
+            ('name', 'not in', names)
+        ]).unlink()
+        return res
+
     def unlink(self):
         item_env = self.env['picking_resin.shift_employees_list']
         key = str((self.name.id, self.shift_date))
