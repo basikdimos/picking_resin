@@ -13,7 +13,14 @@
                   groups="picking_resin.group_admin"
         />
 
-        <!-- Menus -->
+        <menuitem id="menu_shifts"
+                  name="Shifts"
+                  parent="menu_root"
+                  sequence="100"
+                  groups="picking_resin.group_admin"
+        />
+
+        <!-- Menus Config-->
         <!-- Work Employees -->
         <menuitem id="menu_employees"
                   name="Resin employees"
@@ -32,6 +39,22 @@
                   groups="picking_resin.group_admin"
         />
 
-
+        <!-- Work employee list -->
+        <menuitem id="menu_employee_list"
+                  name="Shift employee list"
+                  parent="menu_config"
+                  sequence="170"
+                  action="picking_resin.shift_employee_list"
+                  groups="picking_resin.group_admin"
+        />
+        <!-- Menu work -->
+        <!-- Menu Work Shift-->
+        <menuitem id="menu_work_shift"
+                  name="Work Shift"
+                  parent="menu_shifts"
+                  sequence="150"
+                  action="picking_resin.work_shift_action"
+                  groups="picking_resin.group_admin"
+        />
 
 </odoo>
