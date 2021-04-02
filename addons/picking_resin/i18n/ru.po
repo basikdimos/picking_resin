@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20210318\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 16:05+0000\n"
-"PO-Revision-Date: 2021-03-24 16:05+0000\n"
+"POT-Creation-Date: 2021-04-02 20:11+0000\n"
+"PO-Revision-Date: 2021-04-02 20:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,7 @@ msgstr "Требует внимания"
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_department__active
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__active
 msgid "Active"
 msgstr "Активно"
 
@@ -41,14 +42,23 @@ msgid "Config"
 msgstr "Настройка"
 
 #. module: picking_resin
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__create_uid
-msgid "Created by"
-msgstr ""
+#: model_terms:ir.actions.act_window,help:picking_resin.work_types_action
+msgid "Create your first Work type!!!"
+msgstr "Создайте Тип работы"
 
 #. module: picking_resin
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__create_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__create_uid
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__create_uid
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__create_uid
+msgid "Created by"
+msgstr "Создал"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__create_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__create_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Создано"
 
 #. module: picking_resin
 #: model:ir.model,name:picking_resin.model_hr_department
@@ -59,11 +69,20 @@ msgstr "Участок"
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_department__display_name
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__display_name
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__display_name
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__display_name
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__display_name
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__display_name
 msgid "Display Name"
 msgstr "Отображаемое имя"
 
 #. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__department_id
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__name
+msgid "District"
+msgstr "Участок"
+
+#. module: picking_resin
+#: model_terms:ir.ui.view,arch_db:picking_resin.hr_department_view_form
 #: model_terms:ir.ui.view,arch_db:picking_resin.hr_department_view_list
 msgid "District team"
 msgstr "Участок"
@@ -75,12 +94,8 @@ msgid "District teams"
 msgstr "Участки"
 
 #. module: picking_resin
-#: model_terms:ir.ui.view,arch_db:picking_resin.hr_department_view_form
-msgid "District team"
-msgstr "Участок"
-
-#. module: picking_resin
 #: model:ir.model,name:picking_resin.model_hr_employee
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__name
 msgid "Employee"
 msgstr "Сотрудник"
 
@@ -88,6 +103,11 @@ msgstr "Сотрудник"
 #: model_terms:ir.ui.view,arch_db:picking_resin.hr_department_view_form
 msgid "Employees"
 msgstr "Сотрудники"
+
+#. module: picking_resin
+#: model:ir.model,name:picking_resin.model_picking_resin_shift_employees_list
+msgid "Employees list of shift"
+msgstr "Список сотрудников в смене"
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__message_follower_ids
@@ -107,7 +127,9 @@ msgstr "Подписчики (Партнеры)"
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_department__id
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__id
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__id
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__id
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__id
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__id
 msgid "ID"
 msgstr "Идентификатор"
 
@@ -130,19 +152,30 @@ msgstr "Подписчик"
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_department____last_update
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee____last_update
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2____last_update
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list____last_update
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift____last_update
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types____last_update
 msgid "Last Modified on"
 msgstr "Последнее изменение"
 
 #. module: picking_resin
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__write_uid
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__write_uid
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__write_uid
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: picking_resin
-#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_test_model2__write_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__write_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__write_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__write_date
 msgid "Last Updated on"
 msgstr ""
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__employee_ids
+msgid "List employee"
+msgstr "Список сотрудников"
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__message_main_attachment_id
@@ -152,7 +185,7 @@ msgstr "Основное вложение"
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__parent_id
 msgid "Manager"
-msgstr "Менеджер"
+msgstr "Мастер"
 
 #. module: picking_resin
 #: model_terms:ir.ui.view,arch_db:picking_resin.hr_department_view_form
@@ -201,10 +234,20 @@ msgid "Organization Chart"
 msgstr "Структура"
 
 #. module: picking_resin
+#: model:ir.model,name:picking_resin.model_picking_resin_work_shift
+msgid "Picking Resin work shift"
+msgstr "Отчет о работе"
+
+#. module: picking_resin
 #: model:ir.module.category,name:picking_resin.module_category_picking_resin
 #: model:ir.ui.menu,name:picking_resin.menu_root
 msgid "Picking resin"
 msgstr "Сбор живицы"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__quantity
+msgid "Quantity"
+msgstr "Количество"
 
 #. module: picking_resin
 #: model:ir.model.fields,help:picking_resin.field_hr_employee__user_id
@@ -222,9 +265,35 @@ msgid "Resin employees"
 msgstr "Сотрудники"
 
 #. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__shift_date
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__shift_date
+msgid "Shift Date"
+msgstr "Дата"
+
+#. module: picking_resin
+#: model:ir.actions.act_window,name:picking_resin.shift_employee_list
+msgid "Shift Employee List"
+msgstr "Список сотрудников"
+
+#. module: picking_resin
+#: model:ir.ui.menu,name:picking_resin.menu_employee_list
+msgid "Shift employee list"
+msgstr "Список сотрудников"
+
+#. module: picking_resin
+#: model:ir.ui.menu,name:picking_resin.menu_shifts
+msgid "Shifts"
+msgstr "Отчеты"
+
+#. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__type_of_employment
 msgid "Type of employment"
 msgstr "Тип найма"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__key
+msgid "Unique key record"
+msgstr ""
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__message_unread
@@ -237,6 +306,45 @@ msgid "Unread Messages Counter"
 msgstr "Счетчик непрочитанных сообщений"
 
 #. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__measure_unit
+msgid "UoM"
+msgstr "Ед.измерения"
+
+#. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__user_id
 msgid "User"
 msgstr "Пользователь"
+
+#. module: picking_resin
+#: model:ir.actions.act_window,name:picking_resin.work_shift_action
+#: model:ir.ui.menu,name:picking_resin.menu_work_shift
+msgid "Work Shift"
+msgstr "Отчет о работе"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__work_uom
+msgid "Work UoM"
+msgstr "Ед.измерения"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_shift__work_type_id
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_types__name
+#: model:ir.ui.menu,name:picking_resin.menu_work_types
+#: model_terms:ir.ui.view,arch_db:picking_resin.work_types_form
+msgid "Work type"
+msgstr "Тип работы"
+
+#. module: picking_resin
+#: model_terms:ir.ui.view,arch_db:picking_resin.work_types_tree
+msgid "Work types"
+msgstr "Типы работы"
+
+#. module: picking_resin
+#: model:ir.model,name:picking_resin.model_picking_resin_work_types
+msgid "Work types model"
+msgstr ""
+
+#. module: picking_resin
+#: model:ir.actions.act_window,name:picking_resin.work_types_action
+msgid "Сбор живицы"
+msgstr ""
