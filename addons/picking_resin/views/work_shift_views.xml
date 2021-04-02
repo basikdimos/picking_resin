@@ -29,6 +29,8 @@
                             <div>
                                 <group>
                                     <field name="shift_date"/>
+                                    <field name="work_type_id" widget="selection"/>
+                                    <field name="work_uom"/>
                                 </group>
                                 <group>
                                     <field name="employee_ids">

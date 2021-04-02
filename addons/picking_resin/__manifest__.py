@@ -9,6 +9,7 @@
     'depends': [
         'base',
         'hr',
+        'uom',
     ],
     'data': [
         'security/security.xml',
@@ -16,6 +17,7 @@
 
         'views/hr_employee_ext_view.xml',
         'views/hr_department_ext_view.xml',
+        'views/work_types_view.xml',
         'views/work_shift_views.xml',
         'views/shift_employee_list_view.xml',
 
