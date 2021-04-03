@@ -348,3 +348,18 @@ msgstr ""
 #: model:ir.actions.act_window,name:picking_resin.work_types_action
 msgid "Сбор живицы"
 msgstr ""
+
+#. module: picking_resin
+#: model:ir.actions.act_window,name:picking_resin.types_of_employment
+msgid "Types of Employment"
+msgstr "Виды найма"
+
+#. module: picking_resin
+#: model:ir.ui.view, arch_db:picking_resin.types_of_employment.tree
+msgid "Types of employment"
+msgstr "Виды найма"
+
+#. module: picking_resin
+#: model:ir.ui.view, arch_db:picking_resin.types_of_employment.form
+msgid "Types of employment"
+msgstr "Виды найма"

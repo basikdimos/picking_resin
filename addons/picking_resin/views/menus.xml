@@ -48,6 +48,15 @@
                   groups="picking_resin.group_admin"
         />
 
+        <!-- Types of employment -->
+        <menuitem id="menu_employment_types"
+                  name="Types of employment"
+                  parent="menu_config"
+                  sequence="160"
+                  action="employment_types_action"
+                  groups="picking_resin.group_admin"
+        />
+
         <!-- Work employee list -->
         <menuitem id="menu_employee_list"
                   name="Shift employee list"

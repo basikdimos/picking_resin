@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="employment_types_tree" model="ir.ui.view">
+        <field name="name">picking_resin.types_of_employment.tree</field>
+        <field name="model">picking_resin.types_of_employment</field>
+        <field name="arch" type="xml">
+            <tree string="Types of employment">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="employment_types_form" model="ir.ui.view">
+        <field name="name">picking_resin.types_of_employment.form</field>
+        <field name="model">picking_resin.types_of_employment</field>
+        <field name="arch" type="xml">
+            <form string="Types of employment">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group><field name="name"/></group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="employment_types_action" model="ir.actions.act_window">
+        <field name="name">Types of Employment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">picking_resin.types_of_employment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Types of Employment!!!
+            </p>
+        </field>
+    </record>
+</odoo>

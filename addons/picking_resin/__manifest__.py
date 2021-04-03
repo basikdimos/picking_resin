@@ -20,6 +20,7 @@
         'views/work_types_view.xml',
         'views/work_shift_views.xml',
         'views/shift_employee_list_view.xml',
+        'views/employment_types_view.xml',
 
         'views/menus.xml',
     ],
