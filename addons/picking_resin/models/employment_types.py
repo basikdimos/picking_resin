@@ -39,7 +39,7 @@ class OdooClassName(models.Model):
     )
 
     name = fields.Char(
-        string='type of employment',
+        string='Type of employment',
         help='Enter type of employee',
         required=True
     )
