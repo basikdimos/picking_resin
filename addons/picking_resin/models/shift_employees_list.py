@@ -55,7 +55,15 @@ class ShiftEmployeesList(models.Model):
         string='Unique key record',
     )
 
+    work_type_id = fields.Many2one(
+        comodel_name='picking_resin.work_types',
+        string='Work type'
+    )
 
+    work_uom = fields.Many2one(
+        related='work_type_id.measure_unit',
+        string='Work UoM'
+    )
 
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------

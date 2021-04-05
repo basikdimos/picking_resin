@@ -26,7 +26,7 @@
                     </div>
                     <group>
                         <group><field name="name"/></group>
-                        <group><field name="measure_unit" domain="[('category_id', 'in', ['Вес', 'Ед.'])]"/></group>
+                        <group><field name="measure_unit" domain="[('category_id', 'in', ['Вес', 'Ед.', 'Количество'])]"/></group>
                     </group>
                 </sheet>
             </form>

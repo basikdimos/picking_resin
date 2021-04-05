@@ -10,14 +10,14 @@
                   name="Config"
                   parent="menu_root"
                   sequence="110"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_manager"
         />
 
         <menuitem id="menu_shifts"
                   name="Shifts"
                   parent="menu_root"
                   sequence="100"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
         />
 
         <!-- Menus Config-->
@@ -27,7 +27,7 @@
                   parent="menu_config"
                   sequence="150"
                   action="hr_employee_action"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_manager"
         />
 
         <!-- Work District -->
@@ -36,7 +36,7 @@
                   parent="menu_config"
                   sequence="160"
                   action="picking_resin.hr_department_action"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_manager"
         />
 
         <!-- Work types -->
@@ -45,7 +45,7 @@
                   parent="menu_config"
                   sequence="160"
                   action="work_types_action"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_manager"
         />
 
         <!-- Work employee list -->
@@ -63,7 +63,7 @@
                   parent="menu_shifts"
                   sequence="150"
                   action="picking_resin.work_shift_action"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
         />
 
 </odoo>
