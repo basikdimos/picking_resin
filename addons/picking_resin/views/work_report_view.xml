@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_picking_resin_work_report_list" model="ir.ui.view">
+            <field name="name">Work Report</field>
+            <field name="model">picking_resin.work_report</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="department_id"/>
+                    <field name="quantity"/>
+                    <field name="work_type_id"/>
+                    <field name="shift_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_picking_resin_work_report_pivot" model="ir.ui.view">
+            <field name="name">Work Report Pivot</field>
+            <field name="model">picking_resin.work_report</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="work_type_id" type="col"/>
+                    <field name="department_id" type="row"/>
+                    <field name="quantity" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="picking_resin.action_work_report" model="ir.actions.act_window">
+            <field name="name">Work Report</field>
+            <field name="res_model">picking_resin.work_report</field>
+            <field name="view_mode">tree,pivot</field>
+        </record>
+    
+    </data>
+</odoo>

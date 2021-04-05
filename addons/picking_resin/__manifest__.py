@@ -21,6 +21,8 @@
         'views/work_shift_views.xml',
         'views/shift_employee_list_view.xml',
 
+        'views/work_report_view.xml',
+
         'views/menus.xml',
     ],
     'demo': [],
