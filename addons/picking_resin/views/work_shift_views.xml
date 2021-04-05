@@ -29,14 +29,14 @@
                             <div>
                                 <group>
                                     <field name="shift_date"/>
-                                    <field name="work_type_id" widget="selection"/>
-                                    <field name="work_uom"/>
                                 </group>
                                 <group>
                                     <field name="employee_ids">
                                         <tree create="0" delete="0">
                                             <field name="name"/>
+                                            <field name="work_type_id"  readonly="1"/>
                                             <field name="quantity"/>
+                                            <field name="work_uom" readonly="1"/>
                                             <field name="department_id" invisible="1"/>
                                             <field name="shift_date" invisible="1"/>
                                             <field name="key" invisible="1"/>
