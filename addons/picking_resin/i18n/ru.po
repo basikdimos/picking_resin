@@ -283,7 +283,7 @@ msgstr "Список сотрудников"
 #. module: picking_resin
 #: model:ir.ui.menu,name:picking_resin.menu_shifts
 msgid "Shifts"
-msgstr "Отчеты"
+msgstr "Работы"
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__type_of_employment
