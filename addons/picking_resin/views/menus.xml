@@ -20,6 +20,13 @@
                   groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
         />
 
+        <menuitem id="menu_reports"
+                  name="Reports"
+                  parent="menu_root"
+                  sequence="100"
+                  groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
+        />
+
         <!-- Menus Config-->
         <!-- Work Employees -->
         <menuitem id="menu_employees"
@@ -64,6 +71,16 @@
                   sequence="150"
                   action="picking_resin.work_shift_action"
                   groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
+        />
+
+        <!-- Mwnu Reports -->
+        <!-- Work Report -->
+        <menuitem id="menu_work_report"
+                  name="Work Report"
+                  parent="menu_reports"
+                  sequence="150"
+                  action="picking_resin.action_work_report"
+                  groups="picking_resin.group_admin"
         />
 
 </odoo>
