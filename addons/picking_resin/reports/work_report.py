@@ -89,6 +89,10 @@ class WorkReport(models.Model):
                 emp_lst.shift_date as shift_date,
                 emp_lst.work_type_id as work_type_id
             FROM picking_resin_shift_employees_list as emp_lst
+            WHERE emp_lst.key IN (
+                SELECT shift_key
+                FROM picking_resin_work_shift
+            )
             )
             """.format()
         )

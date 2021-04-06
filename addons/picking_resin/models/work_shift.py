@@ -48,6 +48,10 @@ class WorkShift(models.Model):
         string='List employee',
     )
 
+    shift_key = fields.Char(
+        string='Unique key record',
+    )
+
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -65,6 +69,7 @@ class WorkShift(models.Model):
             # scan-rescan employees
             item_env = self.env['picking_resin.shift_employees_list']
             key = str((self.name.id, self.shift_date))
+            self.shift_key = key
             for records in self.employee_ids:
                 for record in records:
                     item_env.search([
@@ -101,14 +106,24 @@ class WorkShift(models.Model):
     def create(self,vals_list):
         res = super(WorkShift, self).create(vals_list)
         names = []
+        keys = []
         for records in res.employee_ids:
             for record in records:
                 names.append(record.name.id)
+        shift_env = self.env['picking_resin.work_shift'].search([
+            ('name.id', '=', res.name.id),
+        ])
+        for shift in shift_env:
+            keys.append(shift.shift_key)
         item_env = self.env['picking_resin.shift_employees_list']
         key = str((res.name.id, res.shift_date))
         item_env.search([
             ('key', '=', key),
             ('name', 'not in', names)
+        ]).unlink()
+        item_env.search([
+            ('department_id', '=', res.name.id),
+            ('key', 'not in', keys)
         ]).unlink()
         return res
 
