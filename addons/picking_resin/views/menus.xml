@@ -24,7 +24,7 @@
                   name="Reports"
                   parent="menu_root"
                   sequence="100"
-                  groups="picking_resin.group_admin,picking_resin.group_responsible,picking_resin.group_manager"
+                  groups="picking_resin.group_admin,picking_resin.group_director,picking_resin.group_manager"
         />
 
         <!-- Menus Config-->
