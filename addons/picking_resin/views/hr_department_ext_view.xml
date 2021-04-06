@@ -7,7 +7,7 @@
             <field name="model">hr.department</field>
             <field name="priority" eval="32"/>
             <field name="arch" type="xml">
-                <tree>
+                <tree delete="0">
                     <field name="name" string="District team"/>
                     <field name="manager_id" string="Master"/>
                 </tree>
@@ -19,7 +19,7 @@
             <field name="model">hr.department</field>
             <field name="priority" eval="32"/>
             <field name="arch" type="xml">
-                <form>
+                <form delete="0">
                     <sheet>
                         <div class="oe_button_box"
                              name="button_box">

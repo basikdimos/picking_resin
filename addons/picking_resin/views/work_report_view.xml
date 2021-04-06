@@ -31,7 +31,7 @@
         <record id="picking_resin.action_work_report" model="ir.actions.act_window">
             <field name="name">Work Report</field>
             <field name="res_model">picking_resin.work_report</field>
-            <field name="view_mode">tree,pivot</field>
+            <field name="view_mode">pivot,tree</field>
         </record>
     
     </data>

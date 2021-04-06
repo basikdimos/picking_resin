@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="work_types_tree" model="ir.ui.view">
-        <field name="name">picking_resin.work_types.tree</field>
-        <field name="model">picking_resin.work_types</field>
+    <record id="employment_types_tree" model="ir.ui.view">
+        <field name="name">picking_resin.types_of_employment.tree</field>
+        <field name="model">picking_resin.types_of_employment</field>
         <field name="arch" type="xml">
-            <tree string="Work types" delete="0">
+            <tree string="Types of employment" delete="0">
                 <field name="name"/>
-                <field name="measure_unit"/>
             </tree>
         </field>
     </record>
 
 
-    <record id="work_types_form" model="ir.ui.view">
-        <field name="name">picking_resin.work_types.form</field>
-        <field name="model">picking_resin.work_types</field>
+    <record id="employment_types_form" model="ir.ui.view">
+        <field name="name">picking_resin.types_of_employment.form</field>
+        <field name="model">picking_resin.types_of_employment</field>
         <field name="arch" type="xml">
-            <form string="Work type" delete="0">
+            <form string="Types of employment" delete="0">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
@@ -26,7 +25,6 @@
                     </div>
                     <group>
                         <group><field name="name"/></group>
-                        <group><field name="measure_unit" domain="[('category_id', 'in', ['Вес', 'Ед.', 'Количество'])]"/></group>
                     </group>
                 </sheet>
             </form>
@@ -34,14 +32,13 @@
     </record>
 
 
-    <record id="work_types_action" model="ir.actions.act_window">
-        <field name="name">Сбор живицы</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">picking_resin.work_types</field>
+    <record id="picking_resin.employment_types_action" model="ir.actions.act_window">
+        <field name="name">Types of Employment</field>
+        <field name="res_model">picking_resin.types_of_employment</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first Work type!!!
+                Create your first Types of Employment!!!
             </p>
         </field>
     </record>
