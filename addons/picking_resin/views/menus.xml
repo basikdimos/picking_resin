@@ -89,7 +89,7 @@
                   parent="menu_reports"
                   sequence="150"
                   action="picking_resin.action_work_report"
-                  groups="picking_resin.group_admin"
+                  groups="picking_resin.group_admin,picking_resin.group_manager,picking_resin.group_director"
         />
 
 </odoo>

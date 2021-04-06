@@ -214,7 +214,7 @@ msgstr "Основное вложение"
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__parent_id
 #: model:res.groups,name:picking_resin.group_manager
 msgid "Manager"
-msgstr "Мастер"
+msgstr "Менеджер"
 
 #. module: picking_resin
 #: model:res.groups,name:picking_resin.group_responsible
