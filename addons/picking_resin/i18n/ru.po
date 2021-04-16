@@ -324,6 +324,7 @@ msgstr "Работы"
 
 #. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_hr_employee__type_of_employment
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__type_of_employment
 #: model:ir.model.fields,field_description:picking_resin.field_picking_resin_types_of_employment__name
 msgid "Type of employment"
 msgstr "Тип найма"
