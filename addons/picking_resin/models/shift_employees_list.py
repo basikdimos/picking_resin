@@ -37,6 +37,13 @@ class ShiftEmployeesList(models.Model):
         string='Employee',
     )
 
+    type_of_employment = fields.Many2one(
+        comodel_name='picking_resin.types_of_employment',
+        related='name.type_of_employment',
+        string='Type of employment',
+    )
+    """ Тип найма """
+
     quantity = fields.Float(
         string='Quantity',
         digits=(8,2),

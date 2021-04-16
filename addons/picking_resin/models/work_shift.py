@@ -86,6 +86,7 @@ class WorkShift(models.Model):
                     'name': record.id,
                     'quantity': 0.0,
                     'department_id': self.name.id,
+                    'type_of_employment': record.type_of_employment.id,
                     'shift_date': self.shift_date,
                     'key': key,
                 }

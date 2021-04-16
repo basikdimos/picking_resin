@@ -20,6 +20,7 @@
                         <div>
                             <group>
                                 <field name="name" readonly="1" invisible="1"/>
+                                <field name="type_of_employment" readonly="1" invisible="1"/>
                                 <field name="shift_date" readonly="1" invisible="1"/>
                                 <field name="department_id" readonly="1" invisible="1"/>
                                 <field name="key" readonly="1" invisible="1"/>
@@ -36,6 +37,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="type_of_employment"/>
                     <field name="shift_date"/>
                     <field name="work_type_id"/>
                     <field name="quantity"/>
