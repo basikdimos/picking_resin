@@ -92,4 +92,13 @@
                   groups="picking_resin.group_admin,picking_resin.group_manager,picking_resin.group_director"
         />
 
+        <!-- Master Report -->
+        <menuitem id="menu_master_report"
+                  name="Master Report"
+                  parent="menu_reports"
+                  sequence="160"
+                  action="picking_resin.action_master_report"
+                  groups="picking_resin.group_admin,picking_resin.group_manager,picking_resin.group_director"
+        />
+
 </odoo>

@@ -23,6 +23,7 @@
         'views/employment_types_view.xml',
 
         'views/work_report_view.xml',
+        'views/master_report_view.xml',
 
         'views/menus.xml',
     ],
