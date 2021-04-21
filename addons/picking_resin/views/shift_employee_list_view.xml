@@ -52,6 +52,7 @@
             <field name="name">Shift Employee List</field>
             <field name="res_model">picking_resin.shift_employees_list</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'department_id'}</field>
         </record>
     </data>
 </odoo>
