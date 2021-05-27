@@ -10,6 +10,7 @@ from odoo import tools
 # 3 :  imports of odoo modules
 
 # 4 :  imports from custom modules
+from .. import constants as cons
 
 
 _logger = logging.getLogger(__name__)
@@ -64,6 +65,10 @@ class WorkReport(models.Model):
         string='Work type'
     )
 
+    work_type = fields.Char(
+        string='Work or Area'
+    )
+
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -87,14 +92,35 @@ class WorkReport(models.Model):
                 emp_lst.quantity as quantity,
                 emp_lst.department_id as department_id,
                 emp_lst.shift_date as shift_date,
-                emp_lst.work_type_id as work_type_id
+                emp_lst.work_type_id as work_type_id,
+                '{work}' as work_type
+            FROM picking_resin_shift_employees_list as emp_lst
+            WHERE emp_lst.key IN (
+                SELECT shift_key
+                FROM picking_resin_work_shift
+            )
+            UNION 
+            SELECT
+                hashtext(
+                    concat(
+                        emp_lst.id::VARCHAR,'-',emp_lst.shift_date,'-',emp_lst.key
+                    )) as id,
+                emp_lst.name as name,
+                (SELECT work_area FROM hr_employee WHERE id = emp_lst.name) as quantity,
+                emp_lst.department_id as department_id,
+                NULL::DATE as shift_date,
+                NULL::INTEGER as work_type_id,
+                '{area}' as work_type
             FROM picking_resin_shift_employees_list as emp_lst
             WHERE emp_lst.key IN (
                 SELECT shift_key
                 FROM picking_resin_work_shift
             )
             )
-            """.format()
+            """.format(
+                work=cons.TYPE_WORK,
+                area=cons.TYPE_AREA
+            )
         )
 
     # CRUD methods

@@ -61,6 +61,11 @@ class HrEmployeeExt(models.Model):
     )
     """ Тип найма """
 
+    work_area = fields.Float(
+        string='Work area',
+        default=0.0
+    )
+
     # Compute and search fields, in the same order of fields declaration
     # ------------------------------------------------------------------------------------------------------------------
 

@@ -403,6 +403,17 @@ msgid "Work UoM"
 msgstr "Ед.измерения"
 
 #. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_hr_employee__work_area
+msgid "Work area"
+msgstr "Площадь"
+
+#. module: picking_resin
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_master_report__work_type
+#: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_report__work_type
+msgid "Work or Area"
+msgstr "Работа или Площадь"
+
+#. module: picking_resin
 #: model:ir.model.fields,field_description:picking_resin.field_picking_resin_master_report__work_type_id
 #: model:ir.model.fields,field_description:picking_resin.field_picking_resin_shift_employees_list__work_type_id
 #: model:ir.model.fields,field_description:picking_resin.field_picking_resin_work_report__work_type_id

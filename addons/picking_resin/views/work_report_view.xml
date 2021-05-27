@@ -21,6 +21,7 @@
             <field name="model">picking_resin.work_report</field>
             <field name="arch" type="xml">
                 <pivot>
+                    <field name="work_type" type="col"/>
                     <field name="work_type_id" type="col"/>
                     <field name="department_id" type="row"/>
                     <field name="quantity" type="measure"/>

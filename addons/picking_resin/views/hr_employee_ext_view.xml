@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <tree delete="0">
                     <field name="name"/>
+                    <field name="work_area"/>
                     <field name="department_id"/>
                 </tree>
             </field>
@@ -54,6 +55,7 @@
                                         <field name="parent_id" readonly="1"/>
                                         <field name="company_id" invisible="1"/>
                                         <field name="type_of_employment"/>
+                                        <field name="work_area"/>
                                     </group>
                                 </group>
                             </div>
