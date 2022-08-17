@@ -35,7 +35,10 @@
             <field name="arch" type="xml">
                 <search string="work">
                     <field name="name"/>
-                    <filter name="report_work_id_filter" domain="[('department_id.parent_id.manager_id.user_id', 'child_of', uid)]"/>
+                    <filter string="Department" name="report_work_id_filter" domain="[('department_id.parent_id.manager_id.user_id', 'child_of', uid)]"/>
+                    <separator />
+                    <filter string="Year" name="shift_date_filter" date="shift_date" default_period="this_year"/>
+                    <separator />
                 </search>
             </field>
         </record>
@@ -44,7 +47,8 @@
             <field name="name">Work Report</field>
             <field name="res_model">picking_resin.work_report</field>
             <field name="view_mode">pivot,tree</field>
-            <field name="context">{'search_default_report_work_id_filter': 1,}</field>
+            <field name="context">{'search_default_shift_date_filter': 1,
+                'search_default_report_work_id_filter': 1, }</field>
         </record>
     
     </data>
