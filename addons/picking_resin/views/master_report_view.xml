@@ -35,7 +35,10 @@
             <field name="arch" type="xml">
                 <search string="master">
                     <field name="name"/>
-                    <filter name="report_master_id_filter" domain="[('department_id.manager_id.user_id', '=', uid)]"/>
+                    <filter string="Master" name="report_master_id_filter" domain="[('department_id.manager_id.user_id', '=', uid)]"/>
+                    <separator />
+                    <filter string="Year" name="master_shift_date_filter" date="shift_date" default_period="this_year"/>
+                    <separator />
                 </search>
             </field>
         </record>
@@ -45,7 +48,8 @@
             <field name="name">Master Report</field>
             <field name="res_model">picking_resin.master_report</field>
             <field name="view_mode">pivot,tree</field>
-            <field name="context">{'search_default_report_master_id_filter': 1,}</field>
+            <field name="context">{'search_default_master_shift_date_filter': 1,
+                'search_default_report_master_id_filter': 1,}</field>
         </record>
 
     </data>

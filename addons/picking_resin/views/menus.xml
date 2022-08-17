@@ -3,6 +3,7 @@
         <!-- Top menu item -->
         <menuitem id="menu_root"
                   name="Picking resin"
+                  web_icon="picking_resin,static/src/logo_main.png"
         />
 
         <!-- Menu category -->
